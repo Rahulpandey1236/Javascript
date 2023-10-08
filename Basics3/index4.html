@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom4</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addlanguage(langname){
+    const li=document.createElement('li')
+    li.innerHTML=`${langname}`
+    document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("java")
+
+    function addoptimization(langname2){
+
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langname2))
+        document.querySelector('.language').appendChild(li)
+    }
+    addoptimization('ruby')
+
+      //EDIT
+
+    const secondlang=document.querySelector("li:nth-child(2)")
+    //secondlang.innerHTML="mojo"
+    const newli=document.createElement('li')
+    newli.textContent="mojo"
+    secondlang.replaceWith(newli)
+
+
+    //EDIT
+    const firstlang=document.querySelector("li:first-child")
+    firstlang.outerHTML='<li>typescript</li>'
+
+
+    //remve
+    const lastlang=document.querySelector("li:last-child")
+    lastlang.remove()
+</script>
+</html>
